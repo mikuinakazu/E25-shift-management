@@ -1,0 +1,10 @@
+<h1>Editing Meeting</h1>
+
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @meeting %> |
+<%= link_to 'Back', meetings_path %>
