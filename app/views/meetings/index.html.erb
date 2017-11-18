@@ -8,6 +8,13 @@
       <%= meeting.user.name %>
     </div>
   <% end %>
+
+<% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.shift.start_end_time %>
+    </div>
+  <% end %>
+
 <% end %>
 
 

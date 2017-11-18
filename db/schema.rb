@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118070713) do
+ActiveRecord::Schema.define(version: 20171118081437) do
 
   create_table "meetings", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "user_id",    limit: 4
+    t.integer  "shift_id",   limit: 4
   end
 
   create_table "shift_users", force: :cascade do |t|
