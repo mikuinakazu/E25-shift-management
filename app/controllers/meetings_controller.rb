@@ -5,10 +5,6 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     @meetings = Meeting.all
-  end
-
-  def new
-    @meetings = Meeting.all
     @meeting = Meeting.first
   end
 
