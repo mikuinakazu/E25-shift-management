@@ -11,7 +11,7 @@
 
 <% meetings.each do |meeting| %>
     <div>
-      <%= meeting.shift.start_end_time %>
+      <%= link_to "#{meeting.shift.start_end_time}", controller: "shifts", action: "show", id: "#{meeting.shift.id}", date: "#{meeting.start_time}" %>
     </div>
   <% end %>
 

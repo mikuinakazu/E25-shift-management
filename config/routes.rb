@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :meetings, except: [:show, :new]
   root 'meetings#index'
+  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :shifts, only: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
