@@ -1,4 +1,8 @@
 <%= @date %>
-<%= @shift %>
-<%= link_to "このシフトを変更する", edit_user_path %>
-<%= link_to "このシフトを削除する", user_path, method: :delete %>
+<%= @shift.start_end_time %>
+<%= @user_ids %>
+<%= current_user.id %>
+<% if @user_ids.include?(current_user.id) %>
+<p><%= link_to "このシフトを変更する", edit_shift_path %></p>
+<p><%= link_to "このシフトを削除する", shift_path, method: :delete %></p>
+<% end %>

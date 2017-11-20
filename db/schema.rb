@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118081437) do
+ActiveRecord::Schema.define(version: 20171120041413) do
 
   create_table "meetings", force: :cascade do |t|
     t.datetime "start_time"
@@ -21,22 +21,11 @@ ActiveRecord::Schema.define(version: 20171118081437) do
     t.integer  "shift_id",   limit: 4
   end
 
-  create_table "shift_users", force: :cascade do |t|
-    t.integer  "shift_id",   limit: 4
-    t.integer  "user_id",    limit: 4
-    t.integer  "meeting_id", limit: 4
+  create_table "shifttimes", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  add_index "shift_users", ["meeting_id"], name: "fk_rails_1d54c279d8", using: :btree
-  add_index "shift_users", ["shift_id"], name: "fk_rails_3f4012979d", using: :btree
-  add_index "shift_users", ["user_id"], name: "fk_rails_de74ea7fc5", using: :btree
-
-  create_table "shifts", force: :cascade do |t|
-    t.string   "start_end_time", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "start_time", limit: 4
+    t.integer  "end_time",   limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,7 +47,4 @@ ActiveRecord::Schema.define(version: 20171118081437) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "shift_users", "meetings"
-  add_foreign_key "shift_users", "shifts"
-  add_foreign_key "shift_users", "users"
 end
