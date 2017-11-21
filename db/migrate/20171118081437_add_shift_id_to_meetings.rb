@@ -1,5 +1,5 @@
-class AddShiftIdToMeetings < ActiveRecord::Migration
+class AddShiftIdToshifts < ActiveRecord::Migration
   def change
-    add_column :meetings, :shift_id, :integer
+    add_column :shifts, :shift_id, :integer
   end
 end

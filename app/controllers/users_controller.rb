@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @date = User.find(params[:id]).meetings.shift.start_end_time
+    @date = User.find(params[:id]).shifts.shift.start_end_time
   end
 
   def edit

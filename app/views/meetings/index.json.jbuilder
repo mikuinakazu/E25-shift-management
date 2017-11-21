@@ -1,1 +1,1 @@
-json.array! @meetings, partial: 'meetings/meeting', as: :meeting
+json.array! @shifts, partial: 'shifts/shift', as: :shift

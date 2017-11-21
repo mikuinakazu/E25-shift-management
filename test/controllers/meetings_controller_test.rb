@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class MeetingsControllerTest < ActionController::TestCase
+class shiftsControllerTest < ActionController::TestCase
   setup do
-    @meeting = meetings(:one)
+    @shift = shifts(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:meetings)
+    assert_not_nil assigns(:shifts)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class MeetingsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create meeting" do
-    assert_difference('Meeting.count') do
-      post :create, meeting: { name: @meeting.name, start_time: @meeting.start_time }
+  test "should create shift" do
+    assert_difference('shift.count') do
+      post :create, shift: { name: @shift.name, start_time: @shift.start_time }
     end
 
-    assert_redirected_to meeting_path(assigns(:meeting))
+    assert_redirected_to shift_path(assigns(:shift))
   end
 
-  test "should show meeting" do
-    get :show, id: @meeting
+  test "should show shift" do
+    get :show, id: @shift
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @meeting
+    get :edit, id: @shift
     assert_response :success
   end
 
-  test "should update meeting" do
-    patch :update, id: @meeting, meeting: { name: @meeting.name, start_time: @meeting.start_time }
-    assert_redirected_to meeting_path(assigns(:meeting))
+  test "should update shift" do
+    patch :update, id: @shift, shift: { name: @shift.name, start_time: @shift.start_time }
+    assert_redirected_to shift_path(assigns(:shift))
   end
 
-  test "should destroy meeting" do
-    assert_difference('Meeting.count', -1) do
-      delete :destroy, id: @meeting
+  test "should destroy shift" do
+    assert_difference('shift.count', -1) do
+      delete :destroy, id: @shift
     end
 
-    assert_redirected_to meetings_path
+    assert_redirected_to shifts_path
   end
 end

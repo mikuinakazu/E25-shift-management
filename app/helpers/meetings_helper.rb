@@ -1,2 +1,2 @@
-module MeetingsHelper
+module shiftsHelper
 end

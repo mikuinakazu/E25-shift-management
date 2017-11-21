@@ -1,5 +1,5 @@
-class RemoveNameFromMeetings < ActiveRecord::Migration
+class RemoveNameFromshifts < ActiveRecord::Migration
   def change
-    remove_column :meetings, :name, :string
+    remove_column :shifts, :name, :string
   end
 end

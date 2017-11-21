@@ -1,1 +1,1 @@
-json.partial! "meetings/meeting", meeting: @meeting
+json.partial! "shifts/shift", shift: @shift

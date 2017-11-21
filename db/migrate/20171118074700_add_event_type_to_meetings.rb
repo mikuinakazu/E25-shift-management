@@ -1,5 +1,5 @@
-class AddEventTypeToMeetings < ActiveRecord::Migration
+class AddEventTypeToshifts < ActiveRecord::Migration
   def change
-    add_column :meetings, :event_type, :integer
+    add_column :shifts, :event_type, :integer
   end
 end

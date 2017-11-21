@@ -1,6 +1,6 @@
-class CreateMeetings < ActiveRecord::Migration
+class Createshifts < ActiveRecord::Migration
   def change
-    create_table :meetings do |t|
+    create_table :shifts do |t|
       t.string :name
       t.datetime :start_time
 

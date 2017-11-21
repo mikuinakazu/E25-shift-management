@@ -1,5 +1,5 @@
-class RemoveEventTypeFromMeetings < ActiveRecord::Migration
+class RemoveEventTypeFromshifts < ActiveRecord::Migration
   def change
-    remove_column :meetings, :event_type, :integer
+    remove_column :shifts, :event_type, :integer
   end
 end
