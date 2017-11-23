@@ -1,4 +1,4 @@
-<h1>New shift</h1>
+<h1>シフトを確認・登録</h1>
 
 <%= month_calendar events: @shifts do |date, shifts| %>
   <%= date %>
@@ -11,12 +11,12 @@
 
 <% shifts.each do |shift| %>
     <div>
-      <%= link_to "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}", edit_shift_path(shift), id: "#{shift.shift_time_id}", date: "#{shift.start_time}" %>
+      <%= link_to "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}", shift_path(shift), id: "#{shift.shift_time_id}", date: "#{shift.start_time}" %>
     </div>
   <% end %>
 
 <% end %>
 
 <% if current_user %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= link_to 'ログアウト', new_user_registration_path %>
 <% end %>

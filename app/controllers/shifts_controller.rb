@@ -1,8 +1,13 @@
 class ShiftsController < ApplicationController
 
+  def index
+    @shifts = Shift.all
+    @shift = Shift.first
+  end
+
   def show
     @date = params[:date]
-    @shift_time = Shift.find(params[:id])
+    @shift_time = ShiftTime.find(params[:id])
     @user_ids = @shift_time.shifts.pluck(:user_id)
   end
 

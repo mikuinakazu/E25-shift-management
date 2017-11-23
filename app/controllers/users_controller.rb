@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-  end
-
   def show
     @date = User.find(params[:id]).shifts.shift.start_end_time
   end
