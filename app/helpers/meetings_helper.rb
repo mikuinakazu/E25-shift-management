@@ -1,2 +1,0 @@
-module shiftsHelper
-end

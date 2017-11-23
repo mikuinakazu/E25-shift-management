@@ -6,3 +6,13 @@
 <p><%= link_to "このシフトを変更する", edit_shift_path %></p>
 <p><%= link_to "このシフトを削除する", shift_path, method: :delete %></p>
 <% end %>
+
+<!-- 元々shift_timesのビューに書かれていたもの -->
+<%= @date %>
+<%= "#{@shift_time.start_time}-#{@shift_time.end_time}" %>
+<%= @user_ids %>
+<%= current_user.id %>
+<% if @user_ids.include?(current_user.id) %>
+<p><%= link_to "このシフトを変更する", edit_shift_path %></p>
+<p><%= link_to "このシフトを削除する", shift_path, method: :delete %></p>
+<% end %>

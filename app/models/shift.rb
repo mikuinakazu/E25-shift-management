@@ -1,5 +1,5 @@
 class Shift < ActiveRecord::Base
   belongs_to :user
-  belongs_to :shifttime
+  belongs_to :shift_time
 
 end

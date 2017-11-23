@@ -11,24 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121110115) do
+ActiveRecord::Schema.define(version: 20171117124231) do
 
-  create_table "shifts", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "user_id",    limit: 4
-    t.integer  "shift_id",   limit: 4
+  create_table "shift_times", force: :cascade do |t|
+    t.string   "start_time", limit: 255
+    t.string   "end_time",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  create_table "shifttimes", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "start_time", limit: 4
-    t.integer  "end_time",   limit: 4
+  create_table "shifts", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.datetime "start_time"
+    t.integer  "user_id",       limit: 4
+    t.integer  "shift_time_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name",                   limit: 255
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
@@ -41,7 +43,6 @@ ActiveRecord::Schema.define(version: 20171121110115) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "name",                   limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
