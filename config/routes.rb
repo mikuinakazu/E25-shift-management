@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :shifts, only: [:show, :edit, :update, :destroy]
+  resources :shifts
   root 'shifts#index'
   resources :users, only: [:show, :edit, :update, :destroy]
+  resources :shift_times, only: [:show, :edit, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

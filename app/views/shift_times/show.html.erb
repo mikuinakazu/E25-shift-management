@@ -1,7 +1,6 @@
-<h1>シフトを変更・削除</h1>
+<%= @date %>
 <%= "#{@shift_time.start_time}-#{@shift_time.end_time}" %>
-<% if @shift.user_id == current_user.id %>
-
+<% if @user_ids.include?(current_user.id) %>
 <p><%= link_to "このシフトを変更する", edit_shift_path %></p>
 <p><%= link_to "このシフトを削除する", shift_path, method: :delete %></p>
 <% end %>
