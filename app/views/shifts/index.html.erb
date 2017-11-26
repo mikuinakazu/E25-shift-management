@@ -4,9 +4,16 @@
   <%= link_to "#{date}", new_shift_path %>
 
   <% shifts.each do |shift| %>
-    <div>
-      <%= shift.name %>
-    </div>
+    <% if shift.user == current_user %>
+      <div class='myshift'>
+        <%= shift.user.name %>
+      </div>
+    <% else %>
+      <div>
+        <%= shift.user.name %>
+      </div>
+    <% end %>
+
     <div>
       <%= link_to "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}", shift_path(shift), id: "#{shift.shift_time_id}", date: "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}" %>
     </div>

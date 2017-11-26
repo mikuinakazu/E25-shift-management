@@ -1,7 +1,9 @@
 class ShiftsController < ApplicationController
 
+  before_action :detect_devise_variant
+
   def index
-    @shifts = Shift.all
+    @shifts = Shift.all.includes(:user, :shift_time)
   end
 
   def new
@@ -46,6 +48,15 @@ end
 
    def update_params
     params.require(:shift).permit(:shift_time_id)
+   end
+
+   def detect_devise_variant  # (1)と同じ名前
+    case request.user_agent
+      when /iPad/
+          request.variant = :tablet
+      when /iPhone/
+          request.variant = :mobile
+      end
    end
 
   end
