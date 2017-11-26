@@ -11,7 +11,7 @@ class ShiftsController < ApplicationController
   end
 
   def create
-    shift = params.require(:shift).permit(:name, :start_time, :shift_time_id).merge(user_id: current_user.id)
+    shift = params.require(:shift).permit(:start_time, :shift_time_id).merge(user_id: current_user.id, name: current_user.name)
     Shift.create(shift)
   end
 
