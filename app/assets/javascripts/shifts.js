@@ -3,12 +3,21 @@
 //   var element = h.parentNode;
 //   element.className = "myshift-date";
 // });
-window.addEventListener("load", function() {
+// window.addEventListener("load", function() {
+// $(document).on('turbolinks:load', function(){
+$(function(){
   var h = $(".myshift");
   h.each(function(index){
     console.log($(this).parent())
     $(this).parent().addClass("myshift-date");
   })
-  // var element = h.parentNode;
-  // element.className = "myshift-date";
+});
+
+$(function(){
+  $('').hide();
+});
+
+$(function(){
+  $('thead tr th:nth-child(n+6)').hide();
+  $('tbody tr td:nth-child(n+6)').hide();
 });
