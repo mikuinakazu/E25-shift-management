@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: test1_production
-  username: test1
+  username: b7da01d6a88a12
   # password: a<%= ENV['TEST1_DATABASE_PASSWORD'] %>
   password: 09f75759
