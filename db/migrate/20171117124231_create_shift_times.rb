@@ -1,4 +1,4 @@
-class Createshift_times < ActiveRecord::Migration
+class CreateShiftTimes < ActiveRecord::Migration
   def change
     create_table :shift_times do |t|
       t.string :start_time
