@@ -5,7 +5,7 @@
     <%= f.label :"日付" %><br>
     <%= f.text_field :start_time, value: @date %><br>
     <%= f.label :"シフト時間枠" %><br>
-    <%= f.select :shift_time_id, [["19:30-23:30", 13],["19:30-24:00", 14],["20:00-23:30", 15],["20:00-24:00", 16],["20:30-23:30", 17],["20:30-24:00", 18],["21:00-23:30", 19],["21:00-24:00",20]]%><br>
+    <%= f.select :shift_time_id, @shift_times %><br>
     <input type="submit" value="シフトを登録する">
    <% end %>
   </div>

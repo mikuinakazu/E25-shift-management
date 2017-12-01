@@ -9,6 +9,7 @@ class ShiftsController < ApplicationController
     @date = params[:date]
     date = "#{@date}\s00:00:00"
     @shifts = Shift.where(start_time: date)
+    @shift_times = ShiftTime.all.map{|st| ["#{st.start_time}" + "-" + "#{st.end_time}", st.id]}
   end
 
   def create
