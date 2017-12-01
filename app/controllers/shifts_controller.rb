@@ -24,6 +24,7 @@ class ShiftsController < ApplicationController
 
   def edit
     @shift = Shift.find(params[:id])
+    @shift_times = ShiftTime.all.map{|st| ["#{st.start_time}" + "-" + "#{st.end_time}", st.id]}
   end
 
   def update
