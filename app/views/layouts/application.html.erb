@@ -28,7 +28,7 @@
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <span><%= current_user.name %>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  <%= link_to "ログアウト", class="btn btn-default navbar-btn",  destroy_user_session_path, method: :delete %>
             </span>
           </div>
         <% else %>
