@@ -30,7 +30,8 @@
   </head>
 
   <body>
-    <header class="header">
+  <div id="container">
+    <header id="header">
       <div class="header__bar row">
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
@@ -39,18 +40,20 @@
             </span>
           </div>
         <% else %>
-          <div class="grid-6">
-          </div>
+          <!-- <div class="grid-6"> -->
         <% end %>
       </div>
     </header>
 
     <%= yield %>
 
-    <footer>
-      <p><br>
-        Copyright 悦子 2017.
-      </p>
-    </footer>
+  </div>
   </body>
+
+  <footer>
+    <p><br><br><br>
+      Copyright 悦子 2017.
+    </p>
+  </footer>
+
 </html>
