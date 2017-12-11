@@ -1,22 +1,24 @@
-<h2>シフトを新規登録</h2>
-<div class="contents row">
-  <div class="container">
-   <%= form_for @new_shift do |f| %>
-    <%= f.label :"日付" %><br>
-    <%= f.text_field :start_time, value: @date %><br>
-    <%= f.label :"シフト時間枠" %><br>
-    <%= f.select :shift_time_id, @shift_times %><br>
-    <input type="submit" value="シフトを登録する">
-   <% end %>
+<div class="new_reg_container">
+  <h2>シフトを新規登録</h2>
+  <div class="contents row">
+    <div class="container">
+     <%= form_for @new_shift do |f| %>
+      <%= f.label :"日付" %><br>
+      <%= f.text_field :start_time, value: @date %><br>
+      <%= f.label :"シフト時間枠" %><br>
+      <%= f.select :shift_time_id, @shift_times %><br>
+      <input type="submit" value="シフトを登録する">
+     <% end %>
+    </div>
   </div>
+  <br>
+  <h2>シフト一覧</h2>
+  <ul>
+    <% @shifts. each do |shift| %>
+    <li>
+      <%= shift.name %>
+      <%= link_to "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}", shift_path(shift), id: "#{shift.shift_time_id}", date: "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}" %>
+      <% end %>
+    </li>
+  </ul>
 </div>
-<br>
-<h2>シフト一覧</h2>
-<ul>
-  <% @shifts. each do |shift| %>
-  <li>
-    <%= shift.name %>
-    <%= link_to "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}", shift_path(shift), id: "#{shift.shift_time_id}", date: "#{shift.shift_time.start_time}-#{shift.shift_time.end_time}" %>
-    <% end %>
-  </li>
-</ul>

@@ -37,7 +37,7 @@ body , html {
   height: 100%;
 }
 
-.container {
+#container {
   width: 100%;
   position: relative;
   height: auto !important;
@@ -45,7 +45,7 @@ body , html {
   min-height: 100%;
 }
 
-#main-container {
+.main-container {
   padding-bottom: 100px;
 }
 
